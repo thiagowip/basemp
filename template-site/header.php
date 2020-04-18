@@ -25,15 +25,15 @@ function mp_url($type)
 
   <?php include "meta-tags.php"; ?>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="<?php echo $mainFolder; ?>/includes/lib/lightgallery.css?01891" rel="stylesheet">
-  <link href="<?php echo $mainFolder; ?>/includes/lib/foundation.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-  <link href="<?php echo $mainFolder; ?>/includes/lib/animate.css" rel="stylesheet">
-  <link href="<?php echo $mainFolder; ?>/includes/lib/hover.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo $mainFolder; ?>/includes/css/app.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/fallback.css" />
-  <link rel="stylesheet" type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/jquery.sweetalert2.css" />
+  <link type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/lightgallery.css?01891" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/foundation.min.css" rel="stylesheet">
+  <link type="text/css" href="https://unpkg.com/swiper/css/swiper.min.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/animate.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/hover.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/css/app.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/fallback.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/jquery.sweetalert2.css" rel="stylesheet">
 
   <script src="<?php echo $mainFolder ?>/includes/lib/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
