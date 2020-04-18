@@ -1,7 +1,7 @@
 <?php
 $titulo_site = "Base MP";
 $descricao = "";
-$imagem = mp_url('site') . "/includes/imgs/logo.jpg";
+$imagem = mp_url('site') . "/includes/imgs/logo.png";
 $tags = '';
 
 //@require_once("controller/SeoController.class.php");
