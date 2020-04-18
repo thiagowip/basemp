@@ -1,0 +1,35 @@
+@import "config";
+@import "mixin";
+
+.menu-fixed {
+  @include mp-default($h: 50px);
+  background: $c;
+  @include mp-animacao(300ms);
+  position: fixed;
+  top: -50px;
+  z-index: 1200;
+
+  ul {
+    @include mp-default($w: auto, $h: 50px, $c: true);
+
+    li {
+      @include mp-default(auto);
+      padding: 0 15px;
+
+      a {
+        @include mp-default(auto, 50px);
+        color: $c2;
+        font-size: 14px;
+        line-height: 50px;
+
+        &:hover, &.ativo {
+          color: $c;
+        }
+      }
+    }
+  }
+
+  &.open {
+    top: 0;
+  }
+}

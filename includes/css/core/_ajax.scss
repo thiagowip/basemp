@@ -1,0 +1,5 @@
+@import "mixin";
+
+*[data-ajax] {
+  @include mp-default();
+}

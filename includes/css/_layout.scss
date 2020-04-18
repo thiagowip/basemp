@@ -1,0 +1,15 @@
+@import "core/config";
+@import "core/mixin";
+
+.slider-int {
+  @include mp-default();
+  position: relative;
+}
+
+.has-submenu-toggle {
+  &:hover {
+    button {
+      background: $c;
+    }
+  }
+}

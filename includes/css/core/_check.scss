@@ -1,0 +1,180 @@
+@import "config";
+@import "mixin";
+
+/*opções checkbox e radiobutton*/
+
+#radio {
+  @include mp-default($m: 5px 0 0 0);
+
+  a {
+    @include mp-default(100%, auto);
+    @include mp-sombra();
+    color: #393939;
+    font-weight: 300;
+    @include mp-ctr(flex-start);
+
+    p {
+      @include mp-calc(width, "100% - 25px");
+      float: right;
+      margin: 0;
+    }
+
+    span {
+      @include mp-default(20px, 20px, 0 10px 0 0);
+      background: #fff;
+      @include mp-radius(50%);
+      @include mp-ctr();
+      border: 2px solid #d8dfe5;
+    }
+
+    i {
+      @include mp-default(10px, 10px);
+      @include mp-radius(50%);
+      background: $c;
+      opacity: 0;
+      @include mp-ctr();
+      @include mp-animacao();
+    }
+
+    &.ativo i {
+      opacity: 1;
+    }
+  }
+}
+
+#radio2 {
+  @include mp-default($m: 5px 0 0 0);
+
+  a {
+    @include mp-default(100%, auto);
+    @include mp-sombra();
+    color: #7b7b7b;
+    font-weight: 300;
+    @include mp-ctr(flex-start);
+
+    p {
+      @include mp-calc(width, "100% - 25px");
+      float: right;
+      margin: 0;
+    }
+
+    span {
+      @include mp-default(20px, 20px, 0 10px 0 0);
+      background: #fff;
+      @include mp-radius(50%);
+      @include mp-ctr();
+      border: 2px solid #d8dfe5;
+    }
+
+    strong {
+      @include mp-default();
+      color: #7b7b7b;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    i {
+      @include mp-default(10px, 10px);
+      @include mp-radius(50%);
+      background: $c;
+      opacity: 0;
+      @include mp-ctr();
+      @include mp-animacao();
+    }
+
+    &.ativo i {
+      opacity: 1;
+    }
+  }
+
+  .content {
+    @include mp-calc(width, "100% - 50px");
+    float: left;
+    margin-left: 10px;
+  }
+}
+
+// check
+
+#check {
+  @include mp-calc(width, "100% + 30px");
+  float: left;
+  margin: 5px 0 70px 0;
+  max-width: 550px;
+
+  a {
+    @include mp-calc(width, "100% / 2 - 30px");
+    height: 22px;
+    float: left;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 14px;
+    color: $c;
+    @include mp-ctr(flex-start);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      width: 14px;
+      height: 14px;
+      float: left;
+      margin: 0 10px 0 0;
+      background: #fff;
+      @include mp-ctr();
+      border: 2px solid #7db61c;
+    }
+
+    i {
+      @include mp-default(6px, 6px);
+      background: #7db61c;
+      opacity: 0;
+    }
+
+    &.ativo i {
+      opacity: 1;
+    }
+  }
+}
+
+#check2 {
+  width: 100%;
+  float: left;
+  margin-top: 30px;
+
+  a {
+    width: 100%;
+    height: 22px;
+    float: left;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    line-height: 14px;
+    color: #283e51;
+    @include mp-ctr(flex-start);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      width: 14px;
+      height: 14px;
+      float: left;
+      margin: 0 10px 0 0;
+      background: #fff;
+      @include mp-ctr();
+      border: 2px solid #7db61c;
+    }
+
+    i {
+      @include mp-default(6px, 6px);
+      background: #7db61c;
+      opacity: 0;
+    }
+
+    &.ativo i {
+      opacity: 1;
+    }
+  }
+}

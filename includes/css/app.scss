@@ -1,0 +1,18 @@
+//core
+@import "core/config";
+@import "core/init";
+
+// ajax, lightbox, menu, menu fixo, calendario, checkbox //
+//@import "core/ajax";
+//@import "core/lightbox";
+//@import "core/menu-fixo";
+//@import "core/menu";
+//@import "core/calendario";
+//@import "core/check"
+
+//pages
+@import "layout";
+@import "home";
+
+// mobile
+@import "mobile";

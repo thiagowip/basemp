@@ -1,0 +1,32 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Iniciar NPM + Instalar Eslint",
+      "type": "shell",
+      "command": "npm init --yes && npm install && npm install eslint --save-dev && eslint --init"
+    },
+    {
+      "label": "Git Pull",
+      "type": "shell",
+      "command": "git pull origin master"
+    },
+    {
+      "label": "Git Push",
+      "type": "shell",
+      "command": "git status && git add . && git commit -m ajts && git push origin master"
+    },
+    {
+      "label": "Sass",
+      "type": "shell",
+      "command": "cd includes/css && sass --watch app.scss:app.css"
+    },
+    {
+      "label": "Sass Compressed",
+      "type": "shell",
+      "command": "cd includes/css && sass --watch app.scss:app.css --style compressed"
+    }
+  ]
+}

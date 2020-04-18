@@ -1,0 +1,393 @@
+@import "config";
+
+// Mixin Padrao
+@mixin mp-default($w: 100%, $h: auto, $m: 0, $f: left, $c: false, $i: false) {
+  @if $c == true {
+    width: $w;
+    height: $h;
+    float: none;
+    display: table;
+  } @else {
+    @if $i == true {
+      width: $w !important;
+      height: $h !important;
+      float: $f;
+      margin: $m;
+    } @else {
+      width: $w;
+      height: $h;
+      float: $f;
+      margin: $m;
+    }
+  }
+}
+
+@mixin colunas($q) {
+  columns: $q;
+  -webkit-columns: $q;
+  -moz-columns: $q;
+  @content;
+}
+
+@mixin mp-animacao($tempo: 200ms) {
+  -moz-transition: all $tempo ease-in-out;
+  -o-transition: all $tempo ease-in-out;
+  -webkit-transition: all $tempo ease-in-out;
+  transition: all $tempo ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin mp-sem-animacao {
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+@mixin mp-br($tl: 4px, $tr: 4px, $br: 4px, $bl: 4px) {
+  -webkit-border-radius: $tl $tr $br $bl;
+  -moz-border-radius: $tl $tr $br $bl;
+  -o-border-radius: $tl $tr $br $bl;
+  border-radius: $tl $tr $br $bl;
+}
+
+@mixin mp-radius($valor: 4px, $valores: false, $all: true) {
+  @if $all == true {
+    border-radius: $valor;
+  } @else if $valores == true {
+    -webkit-border-radius: $valor;
+    -moz-border-radius: $valor;
+    -o-border-radius: $valor;
+    border-radius: $valor;
+  }
+}
+
+@mixin mp-sombra($c: #333, $t: 0.2px) {
+  -webkit-text-stroke-color: $c !important;
+  -webkit-text-stroke: $t !important;
+}
+
+@mixin mp-sem-sombra {
+  -webkit-text-stroke-color: transparent !important;
+  -webkit-text-stroke: unset !important;
+}
+
+@mixin mp-scale($scale) {
+  -webkit-transform: scale($scale);
+}
+
+@mixin mp-imgresponsive($display: flex) {
+  display: $display;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin mp-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin mp-hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  -webkit-perspective: $perspective;
+  perspective: $perspective;
+}
+
+@mixin mp-center {
+  display: table;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin mp-truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin mp-text-shadow($top: 3px, $left: 3px, $blur: 3px, $colour: #333) {
+  -webkit-text-shadow: $top $left $blur $colour;
+  -moz-text-shadow: $top $left $blur $colour;
+  -o-text-shadow: $top $left $blur $colour;
+  text-shadow: $top $left $blur $colour;
+}
+
+@mixin mp-rotate($val: -2deg) {
+  -webkit-transform: rotate($val);
+  -moz-transform: rotate($val);
+  -ms-transform: rotate($val);
+  -o-transform: rotate($val);
+  transform: rotate($val);
+}
+
+@mixin mp-button($name, $w, $h, $bg, $color, $fw, $br) {
+  .#{$name} {
+    @include mp-default($w, $h);
+    @include mp-br($br, $br, $br, $br);
+    background: $bg;
+    font-weight: $fw;
+    color: $color;
+    cursor: pointer;
+    padding: 5px 20px;
+    @content;
+  }
+}
+
+@mixin mp-calc($property, $value) {
+  #{$property}: -moz-calc(#{$value});
+  #{$property}: -webkit-calc(#{$value});
+  #{$property}: calc(#{$value});
+}
+
+@mixin mp-ctr($js: center) {
+  //noinspection CssInvalidPropertyValue
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  /* centraliza na vertical */
+  -ms-align-items: center;
+  -webkit-align-items: center;
+  align-items: center;
+  /* centraliza na horizontal */
+  -ms-justify-content: center;
+  -webkit-justify-content: center;
+  justify-content: $js;
+  @content;
+}
+
+// select
+@mixin select($input: true) {
+  .fstToggleBtn {
+    color: #fff;
+    background: #000;
+    @include mp-ctr(flex-start);
+    font-size: 14px;
+
+    &::after {
+      border-top-color: #fff;
+      opacity: 1;
+    }
+  }
+
+  @if $input == false {
+    .fstSingleMode .fstQueryInput {
+      opacity: 0;
+      position: absolute;
+      left: -999999px;
+    }
+
+    .fstSingleMode .fstControls {
+      padding: 0;
+    }
+
+    //.fstSingleMode.fstActive .fstResults {
+    //  margin-top: -65px;
+    //}
+  }
+
+  .fstElement {
+    width: 100%;
+    float: left;
+    border: 0;
+    background: transparent;
+  }
+
+  .fstResultItem {
+    font-size: 14px;
+    border: 0;
+  }
+
+  .fstFocused {
+    background-color: $c;
+  }
+
+  .fstResultItem.fstSelected {
+    background-color: $c;
+    border-color: $c;
+  }
+
+  .fstQueryInput {
+    font-size: 14px;
+  }
+
+  .fstSingleMode .fstQueryInput {
+    padding: 7px 15px;
+    height: 40px;
+
+    @include mp-placeholder {
+      font-size: 14px;
+    }
+  }
+
+  .fstNoResults {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 10px;
+  }
+  @content;
+}
+
+@mixin mp-tooltip($content: attr(data-tooltip), $direction: top) {
+  position: relative;
+  &:before,
+  &:after {
+    display: none;
+    z-index: 98;
+  }
+  &:hover {
+    &:after {
+      // for text bubble
+      content: $content;
+      display: block;
+      position: absolute;
+      height: 12px; // (makes total height including padding 22px)
+      padding: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      color: #fff;
+      //@include text-shadow(1px 1px #000);
+      background-color: #222;
+    }
+    @if ($direction == "top") {
+      &:before {
+        //@include triangle(down, 6px, #222);
+        top: -6px;
+        margin-top: 0;
+        left: 47%;
+      }
+      &:after {
+        top: -28px;
+        left: 47%;
+        margin-left: -20px;
+      }
+    } @else if ($direction == "bottom") {
+      &:before {
+        //@include triangle(up, 6px, #222);
+        top: auto;
+        margin-top: 0;
+        bottom: -6px;
+        left: 47%;
+      }
+      &:after {
+        bottom: -28px;
+        left: 47%;
+        margin-left: -20px;
+      }
+    }
+  }
+}
+
+@mixin mp-margins($selector: "> *", $last-child: false) {
+  @if not $selector {
+    $selector: "&";
+  }
+
+  #{unquote($selector)} {
+    &:first-child {
+      margin-top: 0;
+    }
+    @if $last-child {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@mixin auto-width($max, $elem: li) {
+  @for $i from 2 through $max {
+    &:nth-last-child(#{$i}):first-child,
+    &:nth-last-child(#{$i}):first-child ~ #{$elem} {
+      width: percentage(1 / $i);
+    }
+  }
+}
+
+@mixin mp-boxCenterAbsolute($direction: both) {
+  position: absolute;
+  @if $direction == both {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  } @else if $direction == horizontal {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  } @else if $direction == vertical {
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@mixin select-html($he: 50px) {
+  .select {
+    @include mp-default($h: $he);
+    background: url(../../includes/imgs/seta-form.png) no-repeat right center
+      transparent;
+    border: 1px solid #bbb;
+    font-size: 14px;
+    color: #554236;
+    font-weight: 700;
+
+    select {
+      @include mp-default();
+      width: 100%;
+      height: $he;
+      float: left;
+      margin: -$he 0 0;
+      position: relative;
+      opacity: 0;
+      cursor: pointer;
+      color: #000;
+    }
+
+    span strong {
+      @include mp-default($h: $he);
+      color: #000;
+      font-weight: 400;
+      line-height: $he;
+      margin-left: 14px;
+      font-size: 14px;
+    }
+
+    @content;
+  }
+}
+
+// @include mp-position("absolute", top 30px);
+@mixin mp-position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// @include0 mp-counter(4);
+@mixin mp-counter($number) {
+  &:nth-child(#{$number}n + 1) {
+    color: green;
+  }
+}

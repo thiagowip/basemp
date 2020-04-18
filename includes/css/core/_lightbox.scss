@@ -1,0 +1,16 @@
+@import "mixin";
+
+#lt_page {
+  @include mp-default(100%, 100%);
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 3000;
+  overflow: hidden;
+  overflow-y: auto !important;
+  display: none;
+}
+
+#lt_int_page {
+  @include mp-default();
+}
