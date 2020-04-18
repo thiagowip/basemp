@@ -45,7 +45,7 @@ function mp_url($type)
   <script src="<?php echo $mainFolder; ?>/includes/js/core.js"></script>
   <script src="<?php echo $mainFolder; ?>/includes/js/app.js"></script>
   <!-- <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/jquery.sweetalert2.js"></script> -->
-  <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/jquery.form.js"></script>
+  <!-- <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/jquery.form.js"></script> -->
   <!-- <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/mp-ajax.js"></script> -->
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/mp-lightbox.js"></script>
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/mp-utils.js"></script>

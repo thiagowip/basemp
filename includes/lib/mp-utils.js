@@ -1,17 +1,17 @@
 // Exemplo de pattern para validação de campo telefone e whatsapp
 // <input type="tel" name="telefone/whatsapp" placeholder="Telefone/WhatsApp" pattern="\([0-9]{2}\)[\s][0-9]{4,5}-[0-9]{4}" required>
 var $;
-$(document).ready(function() {
+$(document).ready(function () {
   /**
    * @return {string}
    */
-  let SPMaskBehavior = function(val) {
-      return val.replace(/\D/g, "").length === 11
-        ? "(00) 00000-0000"
-        : "(00) 0000-00009";
-    },
+  let SPMaskBehavior = function (val) {
+    return val.replace(/\D/g, "").length === 11
+      ? "(00) 00000-0000"
+      : "(00) 0000-00009";
+  },
     spOptions = {
-      onKeyPress: function(val, e, field, options) {
+      onKeyPress: function (val, e, field, options) {
         field.mask(SPMaskBehavior.apply({}, arguments), options);
       }
     };
