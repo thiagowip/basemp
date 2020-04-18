@@ -3,7 +3,7 @@
 
 @require_once("recaptchalib.php");
 
-$secret = "6Let5KQUAAAAACZdIKFSdBQOx0gnj0TWEm5Xbh7L";
+$secret = "6LdFfeoUAAAAAG5IVX5TDk4jAHEQwt4wG_QI8yA4";
 $response = null;
 $reCaptcha = new ReCaptcha($secret);
 
@@ -38,41 +38,28 @@ if ($_POST["g-recaptcha-response"]) {
 if ($_POST) {
   require_once "implement/SendGrid.php";
   $send = new SendgridImplement();
-
-
   if ($jsonResponse->success === true) {
-
-    $valida = false;
-    $valida = true;
-    $parametros = array_keys($_POST);
-    $corpoMail = "<table cellpadding='0' cellspacing='0' vspace='0'>";
     $email_retorno = $_POST['email'];
+    $titulo = "";
+    $mensagem = "";
     foreach ($parametros as $par) {
-      if ($_POST[$par] != '' && $par != 'g-recaptcha-response') {
-        $titulo = strtoupper($par);
-        $titulo = str_replace("_", " ", $titulo);
-        $mensagem .= "<tr><td>" . $titulo . "</td><td>" . utf8_decode(html_entity_decode($_POST[$par])) . "</td></tr>";
+      if (!empty($_POST[$par])) {
+        if ($_POST[$par] != '' && $par != 'g-recaptcha-response') {
+          $campo = strtoupper($par);
+          $campo = str_replace("_", " ", $campo);
+          $mensagem .= $campo . ": " . utf8_decode(html_entity_decode($_POST[$par])) . "<br>";
+        }
       }
     }
 
 
-    @require_once "controller/GeralController.class.php";
+    @require_once("controller/GeralController.class.php");
     $GeralController = new GeralController();
     $geral = $GeralController->listarPorId(1);
-    $email = $geral->email;
 
     $html = $send->template("Contato", $mensagem);
     $send->send("desenvolvimento3@mediaplus.com.br", "Contato Site", $html);
 
     @header("location: $mainFolder/obrigado");
-  } else {
-    // $data = array(
-    //   'error' => '1',
-    //   'message' => 'Falha ao enviar e-mail',
-    //   'complement' => 'Tente novamente',
-    //   'callback' => ''
-    // );
-
-    // echo json_encode($data);
   }
 }
