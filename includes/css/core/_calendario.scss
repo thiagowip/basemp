@@ -1,4 +1,4 @@
-@import "config";
+@import "../config";
 @import "mixin";
 
 .date-picker {
@@ -130,7 +130,8 @@
         float: left;
       }
 
-      th, td {
+      th,
+      td {
         vertical-align: middle;
         text-align: center;
         line-height: 14px;
@@ -148,7 +149,8 @@
       }
 
       div.day {
-        &.lastMonth, &.nextMonth {
+        &.lastMonth,
+        &.nextMonth {
           color: #999;
           cursor: default;
         }
@@ -191,14 +193,16 @@
       }
     }
 
-    &.nextMonth, &.lastMonth {
+    &.nextMonth,
+    &.lastMonth {
       display: none;
     }
 
     &.real-today {
       background-color: rgb(255, 230, 132);
 
-      &.checked, &.hovering {
+      &.checked,
+      &.hovering {
         background-color: rgb(112, 204, 213);
       }
     }
@@ -208,17 +212,20 @@
     height: 40px;
 
     > th {
-      &:first-of-type, &:last-of-type {
+      &:first-of-type,
+      &:last-of-type {
         width: 27px;
       }
     }
 
-    .next, .prev {
+    .next,
+    .prev {
       padding: 0 5px;
       cursor: pointer;
     }
 
-    .next:hover, .prev:hover {
+    .next:hover,
+    .prev:hover {
       background-color: #ccc;
       color: white;
     }
@@ -306,7 +313,8 @@
     position: relative;
     padding: 10px 40px 10px 0;
 
-    .error-top, .normal-top {
+    .error-top,
+    .normal-top {
       display: none;
     }
 
@@ -375,7 +383,7 @@
     display: block;
   }
 
-  .time input[type=range] {
+  .time input[type="range"] {
     vertical-align: middle;
     width: 129px;
     padding: 0;
@@ -421,7 +429,8 @@
     display: none;
   }
 
-  .first-date-selected, .last-date-selected {
+  .first-date-selected,
+  .last-date-selected {
     background-color: #49e !important;
     color: white !important;
   }
@@ -443,7 +452,7 @@
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
@@ -455,7 +464,8 @@
   }
 
   &.two-months.no-gap {
-    .month1 .next, .month2 .prev {
+    .month1 .next,
+    .month2 .prev {
       display: none;
     }
   }

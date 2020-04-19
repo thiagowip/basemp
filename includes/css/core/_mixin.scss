@@ -1,4 +1,4 @@
-@import "config";
+@import "../config";
 
 // Mixin Padrao
 @mixin mp-default($w: 100%, $h: auto, $m: 0, $f: left, $c: false, $i: false) {
@@ -341,8 +341,7 @@
 @mixin select-html($he: 50px) {
   .select {
     @include mp-default($h: $he);
-    background: url(../../includes/imgs/seta-form.png) no-repeat right center
-      transparent;
+    background: url(../../includes/imgs/seta-form.png) no-repeat right center transparent;
     border: 1px solid #bbb;
     font-size: 14px;
     color: #554236;
@@ -377,8 +376,7 @@
 @mixin mp-position($position, $args) {
   @each $o in top right bottom left {
     $i: index($args, $o);
-    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
-    {
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
       #{$o}: nth($args, $i + 1);
     }
   }
