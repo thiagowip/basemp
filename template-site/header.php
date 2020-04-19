@@ -26,25 +26,26 @@ function mp_url($type)
   <?php include "meta-tags.php"; ?>
 
   <link type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  
+
 
   <!-- //libs -->
   <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/foundation.min.css" rel="stylesheet">
   <link type="text/css" href="<?php echo $mainFolder ?>/includes/lib/swiper.min.css" rel="stylesheet">
   <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/fallback.css" rel="stylesheet">
   <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/jquery.sweetalert2.css" rel="stylesheet">
+  <link type="text/css" href="<?php echo $mainFolder; ?>/includes/lib/lightgallery.css" rel="stylesheet">
 
   <link type="text/css" href="<?php echo $mainFolder; ?>/includes/css/app.css" rel="stylesheet">
 
   <script src="<?php echo $mainFolder ?>/includes/lib/jquery.min.js"></script>
   <script src="<?php echo $mainFolder ?>/includes/lib/jquery.mask.min.js"></script>
 
-  <?php 
+  <?php
   /* 
   //calendario
   <script type="text/javascript" src="<?php //echo $mainFolder; ?> /includes/lib/moment.js"></script>-->
   <script type="text/javascript" src="<?php //echo $mainFolder; ?>/includes/lib/calendario.js"></script>--> 
-  */ 
+  */
   ?>
 
   <script src="<?php echo $mainFolder; ?>/includes/lib/wow.js"></script>
@@ -55,11 +56,11 @@ function mp_url($type)
   <script src="<?php echo $mainFolder; ?>/includes/js/core.js"></script>
   <script src="<?php echo $mainFolder; ?>/includes/js/app.js"></script>
 
-  
+
   <!-- //form ajax -->
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/jquery.sweetalert2.js"></script>
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/jquery.form.js"></script>
-    
+
   <!-- //scripts mp -->
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/mp-ajax.js"></script>
   <script type="text/javascript" src="<?php echo $mainFolder; ?>/includes/lib/mp-lightbox.js"></script>
