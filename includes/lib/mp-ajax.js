@@ -79,7 +79,6 @@ $(document).ready(function () {
             {
               title: data.message,
               text: data.complement,
-              type: "error",
               confirmButtonText: "Ok"
             },
             function () {
@@ -93,7 +92,6 @@ $(document).ready(function () {
             {
               title: data.message,
               text: data.complement,
-              type: "success",
               confirmButtonText: "Ok"
             },
             function () {

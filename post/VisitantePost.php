@@ -19,6 +19,7 @@ if ($_POST['email'] != "") {
   //$retorno = explode("*",)[1];
 
   $data = array(
+    'error' => '3',
     'message' => 'Cadastro efetivado',
     'complement' => 'Clique em ok para continuar',
     'callback' => '  '
@@ -32,6 +33,7 @@ if ($_POST['email'] != "") {
 if ($valida == false) {
 
   $data = array(
+    'error' => '3',
     'message' => 'Erro ao cadastrar!',
     'complement' => 'Clique em ok para continuar',
     'callback' => '  '
