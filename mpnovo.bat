@@ -30,7 +30,7 @@ echo. >>%nome%.php
 echo #_%nome%>>%nome%.php
 cd %CD% /includes/css
 copy NUL _%nome%.scss
-echo @import "core/config"; >>_%nome%.scss
+echo @import "config"; >>_%nome%.scss
 echo @import "core/mixin"; >>_%nome%.scss
 echo. >>_%nome%.scss
 echo #_%nome%{} >>_%nome%.scss
