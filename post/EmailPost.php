@@ -1,10 +1,49 @@
 <?php
 @header("Content-Type: text/html; charset=ISO-8859-1", true);
+
 @include "implement/Encoding.php";
 
 use ForceUTF8\Encoding as Encoding;
 
 @$_POST["g-recaptcha-response"] = $_POST["g-recaptcha-response"];
+$parametros = array_keys($_POST);
+
+// sem recaptcha
+if ($_POST['g-recaptcha-response'] == "") {
+  require_once "implement/SendGrid.php";
+  $send = new SendgridImplement();
+
+  $titulo = "";
+  $mensagem = "";
+  foreach ($parametros as $par) {
+    if (!empty($_POST[$par])) {
+      if ($_POST[$par] != '' && $par != 'g-recaptcha-response') {
+        $campo = strtoupper($par);
+        $campo = str_replace("_", " ", $campo);
+        $mensagem .= $campo . ": " . utf8_decode(html_entity_decode($_POST[$par])) . "<br>";
+      }
+    }
+  }
+
+  // @require_once("controller/GeralController.class.php");
+  // $GeralController = new GeralController();
+  // $geral = $GeralController->listarPorId(1);
+
+  $html = $send->template("Contato", $mensagem);
+  $send->send("desenvolvimento3@mediaplus.com.br", "Ligação", $html);
+
+
+  $data = array(
+    'error' => '3',
+    'message' => '' . Encoding::fixUTF8('Solicitação enviado com sucesso') . '',
+    'complement' => 'Em breve retornaremos',
+    'callback' => '  '
+  );
+
+  echo json_encode($data);
+}
+
+// com recaptcha
 
 if (!$_POST['g-recaptcha-response']) {
   @require_once("recaptchalib.php");
@@ -41,24 +80,12 @@ if (!$_POST['g-recaptcha-response']) {
   }
 }
 
-// sem recaptcha
-if ($_POST['g-recaptcha-response'] == "") {
-  $data = array(
-    'error' => '3',
-    'message' => '' . Encoding::fixUTF8('Solicitação enviado com sucesso') . '',
-    'complement' => 'Em breve retornaremos',
-    'callback' => '  '
-  );
-
-  echo json_encode($data);
-}
-
-// com recaptcha
 if ($_POST && $_POST['g-recaptcha-response']) {
   require_once "implement/SendGrid.php";
   $send = new SendgridImplement();
 
   if ($jsonResponse->success === true) {
+
     $email_retorno = $_POST['email'];
     $titulo = "";
     $mensagem = "";
