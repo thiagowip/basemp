@@ -159,7 +159,7 @@
   #{$property}: calc(#{$value});
 }
 
-@mixin mp-ctr($js: center) {
+@mixin mp-flex($js: center) {
   //noinspection CssInvalidPropertyValue
   display: -ms-flex;
   display: -webkit-flex;
@@ -180,7 +180,7 @@
   .fstToggleBtn {
     color: #fff;
     background: #000;
-    @include mp-ctr(flex-start);
+    @include mp-flex(flex-start);
     font-size: 14px;
 
     &::after {

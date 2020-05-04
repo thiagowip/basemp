@@ -11,7 +11,7 @@
     @include mp-sombra();
     color: #393939;
     font-weight: 300;
-    @include mp-ctr(flex-start);
+    @include mp-flex(flex-start);
 
     p {
       @include mp-calc(width, "100% - 25px");
@@ -23,7 +23,7 @@
       @include mp-default(20px, 20px, 0 10px 0 0);
       background: #fff;
       @include mp-radius(50%);
-      @include mp-ctr();
+      @include mp-flex();
       border: 2px solid #d8dfe5;
     }
 
@@ -32,7 +32,7 @@
       @include mp-radius(50%);
       background: $c;
       opacity: 0;
-      @include mp-ctr();
+      @include mp-flex();
       @include mp-animacao();
     }
 
@@ -50,7 +50,7 @@
     @include mp-sombra();
     color: #7b7b7b;
     font-weight: 300;
-    @include mp-ctr(flex-start);
+    @include mp-flex(flex-start);
 
     p {
       @include mp-calc(width, "100% - 25px");
@@ -62,7 +62,7 @@
       @include mp-default(20px, 20px, 0 10px 0 0);
       background: #fff;
       @include mp-radius(50%);
-      @include mp-ctr();
+      @include mp-flex();
       border: 2px solid #d8dfe5;
     }
 
@@ -78,7 +78,7 @@
       @include mp-radius(50%);
       background: $c;
       opacity: 0;
-      @include mp-ctr();
+      @include mp-flex();
       @include mp-animacao();
     }
 
@@ -110,7 +110,7 @@
     font-size: 14px;
     line-height: 14px;
     color: $c;
-    @include mp-ctr(flex-start);
+    @include mp-flex(flex-start);
 
     &:last-child {
       margin-bottom: 0;
@@ -122,7 +122,7 @@
       float: left;
       margin: 0 10px 0 0;
       background: #fff;
-      @include mp-ctr();
+      @include mp-flex();
       border: 2px solid #7db61c;
     }
 
@@ -151,7 +151,7 @@
     font-size: 14px;
     line-height: 14px;
     color: #283e51;
-    @include mp-ctr(flex-start);
+    @include mp-flex(flex-start);
 
     &:last-child {
       margin-bottom: 0;
@@ -163,7 +163,7 @@
       float: left;
       margin: 0 10px 0 0;
       background: #fff;
-      @include mp-ctr();
+      @include mp-flex();
       border: 2px solid #7db61c;
     }
 
