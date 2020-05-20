@@ -11,6 +11,7 @@ $tags = '';
 //@$titulo_site = $seo[0]->titulo;
 //@$descricao = $seo[0]->descricao;
 ?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title><?php echo html_entity_decode($titulo_site); ?></title>
 <meta property="og:title" content="<?php echo html_entity_decode($titulo_site); ?>" />
